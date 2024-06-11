@@ -1,20 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="df714d1d-9802-4b83-ac8f-aace9dc0389d" name="Changes" comment="" />
+    <list default="true" id="df714d1d-9802-4b83-ac8f-aace9dc0389d" name="Changes" comment="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <change afterPath="$PROJECT_DIR$/Executable/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interface/ViewsMethods/DiffEquations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interface/ViewsMethods/Interpolation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interface/ViewsMethods/SystemEquations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interface/ViewsMethods/Taylor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interface/ViewsMethods/Zeros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/DifferentialEquations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/DifferentialEquations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/InterpolationAndAdjustment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/InterpolationAndAdjustment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/SystemOfLinearEquations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/SystemOfLinearEquations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/TaylorSeries.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/TaylorSeries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/ZerosOfFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/ZerosOfFunctions.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Psychohistorian11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Psychohistorian11/InterfazDeMetodos_AnalisisNumerico.git&quot;,
+    &quot;accountId&quot;: &quot;fb1dcc68-e866-4346-a31c-31b4e6e48831&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2hesEWsCUza4iRfMEfOihkOpPhh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InterfazDeMetodos_AnalisisNumerico" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Executable" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Executable/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -32,6 +108,60 @@
       <option name="presentableId" value="Default" />
       <updated>1717965766038</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creación del proyecto">
+      <option name="closed" value="true" />
+      <created>1717965933478</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717965933478</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <option name="closed" value="true" />
+      <created>1717966494224</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717966494224</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <option name="closed" value="true" />
+      <created>1717966512268</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717966512268</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <option name="closed" value="true" />
+      <created>1717966691029</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717966691029</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <option name="closed" value="true" />
+      <created>1717966696273</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717966696274</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre.">
+      <option name="closed" value="true" />
+      <created>1717966706866</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717966706866</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creación del proyecto" />
+    <MESSAGE value="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación del proyecto y los archivos Iniciales.&#10;&#10;Interface: &#10;Contendrá la logica relacionado con el manejo de la interfaz.&#10;&#10;Methods: &#10;Contendrá los metodos vistos en el semestre." />
   </component>
 </project>
