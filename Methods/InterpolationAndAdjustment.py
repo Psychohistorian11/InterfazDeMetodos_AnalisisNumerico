@@ -2,7 +2,6 @@ import time
 import numpy as np
 import sympy as sp
 import matplotlib.pyplot as plt
-import tkinter as tk
 
 
 class InterpolationAndAdjustment:
@@ -13,8 +12,8 @@ class InterpolationAndAdjustment:
         sf = sum(yd)
         sx2 = sum(xd ** 2)
         sfx = sum(xd * yd)
-        a0 = (sf * sx2 - sx * sfx) / (m * sx2 - (sx) ** 2)
-        a1 = (m * sfx - sx * sf) / (m * sx2 - (sx) ** 2)
+        a0 = (sf * sx2 - sx * sfx) / (m * sx2 - sx ** 2)
+        a1 = (m * sfx - sx * sf) / (m * sx2 - sx ** 2)
         return a0, a1
 
     def Polinomial_Simple(self, x_data, y_data):
@@ -59,13 +58,25 @@ class InterpolationAndAdjustment:
             P = P + a_i[i] * ux ** i
         return P
 
+    def Pol_simple2(self,x_data, y_data):
+        n = len(x_data)
+        xo = np.zeros(n)
+        M_p = np.zeros([n, n])
+        for i in range(n):
+            M_p[i, 0] = 1
+            for j in range(1, n):
+                M_p[i, j] = M_p[i, j - 1] * x_data[i]
+        y_data = y_data.reshape(-1, 1)  # Convertir y_data a una matriz columna
+        a_i = np.linalg.solve(M_p, y_data)
+        return a_i.flatten()  # Devolver los coeficientes como un vector
+
     def Lagrange(self, x, xd, yd):
         n = len(xd)
         P = 0
         for i in range(n):
             L = 1
             for j in range(n):
-                if (j != i):
+                if j != i:
                     L = L * ((x - xd[j]) / (xd[i] - xd[j]))
 
             P = P + L * yd[i]

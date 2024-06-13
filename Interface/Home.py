@@ -7,6 +7,7 @@ from Interface.ViewsMethods.SystemEquations import SystemEquations
 from Interface.ViewsMethods.DiffEquations import DiffEquations
 from Interface.ViewsMethods.Interpolation import Interpolation
 
+
 class Home:
     def __init__(self, root):
         self.root = root
@@ -41,7 +42,8 @@ class Home:
         btn_taylor.pack(pady=5)
 
         btn_open_interpolation_and_adjustment = tk.Button(root, text="Interpolación y Ajuste",
-                                                          command=self.open_interpolation_and_adjustment, **button_config)
+                                                          command=self.open_interpolation_and_adjustment,
+                                                          **button_config)
         btn_open_interpolation_and_adjustment.pack(pady=5)
 
         btn_open_systemOf_linear_equations = tk.Button(root, text="Sistemas de Ecuaciones Lineales",
@@ -70,4 +72,3 @@ class Home:
 
     def open_differential_equations(self):
         DiffEquations(self.root)
-
