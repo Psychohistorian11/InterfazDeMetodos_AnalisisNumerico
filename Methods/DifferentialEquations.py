@@ -3,12 +3,6 @@ import tkinter as tk
 
 class DifferentialEquations:
 
-    def __init__(self, root):
-        window = tk.Toplevel(root)
-        window.title("Ecuaciones Diferenciales")
-        label = tk.Label(window, text="Esta es la ventana de Ecuaciones Diferenciales")
-        label.pack(pady=10)
-
     def Euler(self, f, a, b, co, h):
         n = int((b - a) / h)
         t = np.linspace(a, b, n + 1)

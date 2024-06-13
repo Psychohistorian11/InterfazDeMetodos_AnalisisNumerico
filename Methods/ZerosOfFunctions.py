@@ -4,12 +4,6 @@ import tkinter as tk
 
 class ZerosOfFunctions:
 
-    def __init__(self, root):
-        window = tk.Toplevel(root)
-        window.title("Ceros de funciones")
-        label = tk.Label(window, text="Esta es la ventana de Ceros")
-        label.pack(pady=10)
-
     def bisection(self, f, a, b, tol):
         global c
         if f(a) * f(b) > 0:

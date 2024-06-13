@@ -5,12 +5,6 @@ import tkinter as tk
 
 class SystemOfLinearEquations:
 
-    def __init__(self, root):
-        window = tk.Toplevel(root)
-        window.title("Sistemas de Ecuaciones Lineales")
-        label = tk.Label(window, text="Esta es la ventana de Sistemas de Ecuaciones Lineales")
-        label.pack(pady=10)
-
     def Gauss_Seidel_(self, A, b, x0, tol):
 
         global error
