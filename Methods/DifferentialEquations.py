@@ -11,7 +11,7 @@ class DifferentialEquations:
             yeu.append(yeu[i] + h * f(t[i], yeu[i]))
         return t, yeu
 
-    def Rk4(self, f, a, b, h, c0):
+    def Rk4(self, f, a, b, c0, h):
         yr = [c0]
         n = int((b - a) / h)
         t = np.linspace(a, b, n + 1)
@@ -21,4 +21,4 @@ class DifferentialEquations:
             k3 = h * f(t[i] + h / 2, yr[i] + 1 / 2 * k2)
             k4 = h * f(t[i] + h / 2, yr[i] + 1 / 2 * k3)
             yr.append(yr[i] + (1 / 6) * (k1 + 2 * k2 + 2 * k3 + k4))
-        return yr, t
+        return t, yr

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df714d1d-9802-4b83-ac8f-aace9dc0389d" name="Changes" comment="Avance sistemas de ecuaciones lineales">
+    <list default="true" id="df714d1d-9802-4b83-ac8f-aace9dc0389d" name="Changes" comment="Sistema de ecuaciones realizado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interface/ViewsMethods/SystemEquations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/ViewsMethods/SystemEquations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface/ViewsMethods/DiffEquations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/ViewsMethods/DiffEquations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/DifferentialEquations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/DifferentialEquations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718328020459</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Sistema de ecuaciones realizado">
+      <option name="closed" value="true" />
+      <created>1718332960562</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718332960562</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +196,7 @@
     <MESSAGE value="Interpolación y Ajuste realizado" />
     <MESSAGE value="Taylor Realizado" />
     <MESSAGE value="Avance sistemas de ecuaciones lineales" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avance sistemas de ecuaciones lineales" />
+    <MESSAGE value="Sistema de ecuaciones realizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistema de ecuaciones realizado" />
   </component>
 </project>
