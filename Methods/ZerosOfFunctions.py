@@ -7,7 +7,7 @@ class ZerosOfFunctions:
     def bisection(self, f, a, b, tol):
         global c
         if f(a) * f(b) > 0:
-            print(f"la función no cumple el teorema en: {a, b}")
+            raise Exception(f"la función no cumple el teorema en: {a, b}")
         else:
             i = 0
             while abs(b - a) > tol:
@@ -21,7 +21,7 @@ class ZerosOfFunctions:
 
     def positionFalse(self, f, a, b, tol):
         if f(a) * f(b) > 0:
-            print(f"la función no cumple el teorema en: {a, b}")
+            raise Exception(f"la función no cumple el teorema en: {a, b}")
         else:
             i = 0
             c = a - f(a) * (a - b) / (f(a) - f(b))
