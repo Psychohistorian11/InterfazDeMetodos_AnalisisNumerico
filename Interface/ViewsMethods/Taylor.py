@@ -4,7 +4,6 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from math import factorial
 from Methods.TaylorSeries import TaylorSeries
 
 
@@ -29,10 +28,6 @@ class Taylor:
         tk.Label(window, text="Ingrese el punto inicial (x0):").grid(row=3, column=0, padx=5, pady=5)
         self.x0_entry = tk.Entry(window)
         self.x0_entry.grid(row=3, column=1, padx=5, pady=5)
-
-        # Botón para insertar π
-        self.pi_button = tk.Button(window, text="π", command=self.insert_pi)
-        self.pi_button.grid(row=0, column=2, padx=5, pady=5)
 
         self.calculate_button = tk.Button(window, text="Calcular", command=self.calculate_taylor)
         self.calculate_button.grid(row=4, columnspan=2, pady=10)
@@ -59,11 +54,6 @@ class Taylor:
         self.multiple_result_label = tk.Label(window, text="")
         self.multiple_button = tk.Button(window, text="Calcular Múltiples Polinomios", command=self.calculate_multiple)
 
-    def insert_pi(self):
-        widget = self.root.focus_get()
-        if isinstance(widget, tk.Entry):
-            widget.insert(tk.END, "π")
-
     def calculate_taylor(self):
         polynomial_str = self.polynomial_entry.get()
         degree_str = self.degree_entry.get()
@@ -76,7 +66,7 @@ class Taylor:
         try:
             polynomial = sp.sympify(polynomial_str)
             degree = int(degree_str)
-            x0 = float(x0_str)
+            x0 = float(sp.N(sp.sympify(x0_str)))  # Convierte usando SymPy
         except Exception as e:
             messagebox.showerror("Error", f"Error en la entrada: {e}")
             return
@@ -94,34 +84,44 @@ class Taylor:
         p = sp.lambdify(self.x, taylor_poly)
         w = np.linspace(x0 - 1, x0 + 1, 1000)
 
-        #Polinomio
         ax.plot(w, p(w), 'r--', label=f'Polinomio de Taylor (grado {self.degree_entry.get()})')
-        #Función Original
+
         original_func_lambdified = sp.lambdify(self.x, original_func)
         ax.plot(w, original_func_lambdified(w), label='Función Original')
-        #punto
-        ax.plot(x0, original_func_lambdified(x0), 'bo', label=f'Punto inicial (x0={x0})')
+
+        # Graficar el punto inicial
+        ax.plot([x0], [original_func_lambdified(x0)], 'bo', label=f'Punto inicial (x0={x0})')
+
         ax.legend()
 
-        # Limpiar el frame de gráficos antes de agregar el nuevo gráfico
         for widget in self.plot_frame.winfo_children():
             widget.destroy()
 
-        # Mostrar la gráfica en la interfaz
         canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
         canvas.draw()
         canvas.get_tk_widget().pack()
 
+    def show_cota_input(self):
+        self.cota_label.grid(row=8, column=0, padx=5, pady=5)
+        self.cota_entry.grid(row=8, column=1, padx=5, pady=5)
+        self.cota_button.grid(row=9, columnspan=2, pady=5)
+        self.cota_result_label.grid(row=10, columnspan=2, pady=5)
+
+    def show_multiple_input(self):
+        self.multiple_label.grid(row=8, column=0, padx=5, pady=5)
+        self.multiple_entry.grid(row=8, column=1, padx=5, pady=5)
+        self.multiple_button.grid(row=9, columnspan=2, pady=5)
+        self.multiple_result_label.grid(row=10, columnspan=2, pady=5)
 
     def calculate_cota(self):
         try:
-            x_val = float(self.cota_entry.get())
+            x_val = float(sp.N(sp.sympify(self.cota_entry.get())))  # Convierte usando SymPy
             polynomial_str = self.polynomial_entry.get()
             degree_str = self.degree_entry.get()
             x0_str = self.x0_entry.get()
             polynomial = sp.sympify(polynomial_str)
             degree = int(degree_str)
-            x0 = float(x0_str)
+            x0 = float(sp.N(sp.sympify(x0_str)))  # Convierte usando SymPy
             cota_value = self.taylorSeries.cota(polynomial, x_val, x0, degree)
             self.cota_result_label.config(text=f"Cota: {cota_value}")
         except Exception as e:
@@ -135,62 +135,30 @@ class Taylor:
             polynomial_str = self.polynomial_entry.get()
             x0_str = self.x0_entry.get()
             polynomial = sp.sympify(polynomial_str)
-            x0 = float(x0_str)
+            x0 = float(sp.N(sp.sympify(x0_str)))  # Convierte usando SymPy
 
             fig, ax = plt.subplots()
 
             original_func_lambdified = sp.lambdify(self.x, polynomial)
             w = np.linspace(x0 - 1, x0 + 1, 1000)
 
-            # Graficar la función original
             ax.plot(w, original_func_lambdified(w), label='Función Original')
 
-            # Calcular y graficar los polinomios de Taylor
             for i, degree in enumerate(degree_list):
                 taylor_poly = self.taylorSeries.taylor(polynomial, x0, degree)
                 p = sp.lambdify(self.x, taylor_poly)
                 ax.plot(w, p(w), linestyle='--', label=f'Polinomio Taylor (grado {degree})')
 
-            ax.plot(x0, original_func_lambdified(x0), 'bo', label=f'Punto inicial (x0={x0})')
+            ax.plot([x0], [original_func_lambdified(x0)], 'bo', label=f'Punto inicial (x0={x0})')
             ax.legend()
 
-            # Limpiar el frame de gráficos antes de agregar el nuevo gráfico
             for widget in self.plot_frame.winfo_children():
                 widget.destroy()
 
-            # Mostrar la gráfica en la interfaz
             canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
             canvas.draw()
             canvas.get_tk_widget().pack()
 
         except Exception as e:
             messagebox.showerror("Error", f"Error en la entrada: {e}")
-
-
-    def show_cota_input(self):
-        self.clear_cota_input()
-        self.cota_label.grid(row=10, column=0, padx=5, pady=5)
-        self.cota_entry.grid(row=10, column=1, padx=5, pady=5)
-        self.cota_button.grid(row=11, columnspan=2, pady=5)
-        self.cota_result_label.grid(row=12, columnspan=2, pady=5)
-
-    def clear_cota_input(self):
-        self.cota_label.grid_forget()
-        self.cota_entry.grid_forget()
-        self.cota_button.grid_forget()
-        self.cota_result_label.grid_forget()
-
-    def show_multiple_input(self):
-        self.clear_multiple_input()
-        self.multiple_label.grid(row=8, column=0, padx=5, pady=5)
-        self.multiple_entry.grid(row=8, column=1, padx=5, pady=5)
-        self.multiple_button.grid(row=9, columnspan=2, pady=5)
-        self.multiple_result_label.grid(row=10, columnspan=2, pady=5)
-
-    def clear_multiple_input(self):
-        self.multiple_label.grid_forget()
-        self.multiple_entry.grid_forget()
-        self.multiple_button.grid_forget()
-        self.multiple_result_label.grid_forget()
-
 
