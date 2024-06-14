@@ -13,7 +13,7 @@ class DiffEquations:
         self.window = tk.Toplevel(root)
         self.window.title("Ecuaciones Diferenciales")
 
-        tk.Label(self.window, text="Ingrese la ecuación diferencialal (use 't' como variable independiente y 'y' como variable dependiente):").grid(row=0, column=0, padx=5, pady=5)
+        tk.Label(self.window, text="Ingrese la ecuación diferencialal :").grid(row=0, column=0, padx=5, pady=5)
         self.equation = tk.Entry(self.window)
         self.equation.grid(row=0, column=1, padx=5, pady=5)
 
